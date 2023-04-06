@@ -7,32 +7,15 @@ class amenu extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model("Productmodel");
-		$this->load->library("session");
 
 	}
 
 	public function index()
 	{
-		if($this->validar()){
-			if($this->session->userdata('Rol')== 1){
-				$data = array("data"=>$this->Productmodel->getProduct(1));
-				$this->load->view('admin/menu', $data);	
-			}
-			else{
-				$data = array("data"=>$this->Productmodel->getProduct(1));
-				$this->load->view('menu', $data);	
-			}
-		}
-		else{
-			$data = array("data"=>$this->Productmodel->getProduct(1));
-			$this->load->view("menu", $data);
-		}
+		$data = array("data"=>$this->Productmodel->getProduct());
+		
+		$this->load->view('admin/menu', $data);
 	}
 	
-	public function validar(){
-		if($this->session->userdata('Rol')!=null)
-			return true;
-		else
-			return false;
-	}
+
 }

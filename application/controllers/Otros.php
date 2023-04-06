@@ -12,7 +12,7 @@ class Otros extends CI_Controller {
 
 	public function index()
 	{
-		$data = array("data"=>$this->Productmodel->getProduct(5));
+		$data = array("data"=>$this->Productmodel->getProduct5());
 		
 		$this->load->view('otros', $data);
 	}

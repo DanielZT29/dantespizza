@@ -5,15 +5,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Productmodel extends CI_Model {
 
 	
-    public function getProduct($fk_categoria){
+    public function getProduct(){
         $this->db->select("*");
         $this->db->from("productos");
-        $this->db->where("fk_categoria", $fk_categoria);
+        $this->db->where("fk_categoria=1");
         $results=$this->db->get();
         return $results->result();
        
 }
-/*
 public function getProduct2(){
     $this->db->select("*");
     $this->db->from("productos");
@@ -46,8 +45,6 @@ public function getProduct5(){
     return $results->result();
    
 }
-*/
-
 public function getOrden($id_productos){
     $this->db->select("*");
     $this->db->from("productos");

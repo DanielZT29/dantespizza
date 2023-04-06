@@ -33,10 +33,7 @@
               </li>
             </ul>
             <form class="d-flex" >
-                <a  class="btn btn-success" >
-                <?php echo $this->session->userdata("usuario") != null ? $this->session->userdata("usuario"):'';
-                    ?>
-                </a>
+                <a  class="btn btn-success" >Admin</a>
                 <a href="<?php echo site_url("Loguear/salir"); ?>">   
                 <span class="btn btn-success">
                      Salir
@@ -68,7 +65,7 @@
 
         
         
-        <a href="<?php echo base_url(); ?>index.php/crearpizza" class="btn btn-outline-success" style="margin-left: 66%; margin-top: 1%;">Crear nueva pizza</a>
+        <a href="<?php echo base_url(); ?>index.php/crearpizza"" class="btn btn-outline-success" style="margin-left: 66%; margin-top: 1%;">Crear nueva pizza</a>
 
         <?php $number=0; foreach($data as $key => $value):?>
               <div class="col">

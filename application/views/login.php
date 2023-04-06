@@ -27,7 +27,6 @@
                     
                     <button type="submit">Iniciar Sesion</button>
                     <div class="register">
-                        <?php echo isset($error)? $error:'';?>
                         <p>Don't have a account <a href="<?php echo base_url(); ?>index.php/registros" >Register</a></p>
                     </div>
                 </form>

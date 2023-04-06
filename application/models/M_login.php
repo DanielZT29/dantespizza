@@ -6,6 +6,7 @@ class M_login extends CI_Model {
                     ->from('usuario')
                     ->where('correo',$user)
                     ->where('contraseña', $pass)
+                    
                     ->get()
                     ->row();
 

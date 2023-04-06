@@ -8,6 +8,13 @@
                             ->result();
         }
 
+        public function updateProducto($datos, $id_inventario){
+            $this->db->where('id_inventario', $id_inventario);
+            $this->db->update('inventario', $datos);    
+           
+        }
+    
+
         public function guardarProducto($datos){
             $this->db->insert("inventario",$datos);
         }
@@ -17,9 +24,5 @@
                             ->delete('inventario');             
         }
 
-        public function updateProducto($datos,$id_inventario){
-            $this->db->where('id_inventario',$id_inventario)
-                     ->update('inventario', $datos);
-        }
     
 }

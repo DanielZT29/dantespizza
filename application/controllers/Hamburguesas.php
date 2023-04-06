@@ -12,7 +12,7 @@ class Hamburguesas extends CI_Controller {
 
 	public function index()
 	{
-		$data = array("data"=>$this->Productmodel->getProduct(2));
+		$data = array("data"=>$this->Productmodel->getProduct2());
 		
 		$this->load->view('hamburguesas', $data);
 	}

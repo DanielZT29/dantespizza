@@ -33,10 +33,7 @@
               </li>
             </ul>
             <form class="d-flex" >
-                <a  class="btn btn-success" >
-                    <?php echo $this->session->userdata("usuario") != null ? $this->session->userdata("usuario"):'';?>
-                    
-                </a>
+                <a  class="btn btn-success" >Carlos</a>
                 <a href="<?php echo base_url(); ?>index.php/carrito" class="nav-link active" id="user"><i class="fa-solid fa-cart-shopping"></i></a>
                 <a href="<?php echo site_url("Loguear/salir"); ?>">   
                 <span class="btn btn-success">
@@ -59,11 +56,11 @@
             <a href=" <?php echo base_url(); ?>index.php/burritos">Burritos</a>
             <a href="<?php echo base_url(); ?>index.php/sincronizadas">Sincronizadas</a>
              <a href=" <?php echo base_url(); ?>index.php/otros">Otros</a>
-
         </div>
     
     <br>
     
+
 
         <div class="row row-cols-1 row-cols-xs-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4">
 

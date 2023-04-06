@@ -33,7 +33,7 @@
               </li>
             </ul>
             <form class="d-flex" >
-                <a  class="btn btn-success" ><?php echo $this->session->userdata("usuario") != null ? $this->session->userdata("usuario"):'';?></a>
+                <a  class="btn btn-success" >Carlos</a>
                 <a href="<?php echo base_url(); ?>index.php/carrito" class="nav-link active" id="user"><i class="fa-solid fa-cart-shopping"></i></a>
                 <a href="<?php echo site_url("Loguear/salir"); ?>">   
                 <span class="btn btn-success">

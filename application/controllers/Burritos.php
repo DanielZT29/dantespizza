@@ -12,7 +12,7 @@ class Burritos extends CI_Controller {
 
 	public function index()
 	{
-		$data = array("data"=>$this->Productmodel->getProduct(3));
+		$data = array("data"=>$this->Productmodel->getProduct3());
 		
 		$this->load->view('burritos', $data);
 	}

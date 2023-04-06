@@ -12,7 +12,7 @@ class Menu extends CI_Controller {
 
 	public function index()
 	{
-		$data = array("data"=>$this->Productmodel->getProduct(1));
+		$data = array("data"=>$this->Productmodel->getProduct());
 		
 		$this->load->view('menu', $data);
 	}

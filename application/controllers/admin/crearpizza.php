@@ -1,32 +1,20 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class crearpizza extends CI_Controller {
+
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('Productmodel');
-		$this->load->library("session");
-	}
-	public function index()
-	{
-		if($this->validar()){
-			if($this->session->userdata('Rol')== 1){
-				$this->load->view('admin/crearpizza');	
-			}
-			else{
-				$this->load->view('login');	
-			}
-		}
-		else{
-			$this->load->view("login");
-		}
+		
 	}
 
-	public function validar(){
-		if($this->session->userdata('Rol')!=null)
-			return true;
-		else
-			return false;
-		}
+	public function index()
+	{
+		
+		
+		$this->load->view('admin/crearpizza');
+	}
     public function save()
 
 	{

@@ -7,33 +7,15 @@ class ahamburguesas extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model("Productmodel");
-		$this->load->library("session");
+
 	}
 
 	public function index()
 	{
-		if($this->validar()){
-			if($this->session->userdata('Rol')== 1){
-				$data = array("data"=>$this->Productmodel->getProduct(2));
-				$this->load->view('admin/hamburguesas', $data);	
-			}
-			else{
-				$data = array("data"=>$this->Productmodel->getProduct(2));
-				$this->load->view('hamburguesas', $data);	
-			}
-		}
-		else{
-			$data = array("data"=>$this->Productmodel->getProduct(2));
-			$this->load->view("hamburguesas", $data);
-		}
+		$data = array("data"=>$this->Productmodel->getProduct2());
+		
+		$this->load->view('admin/hamburguesas', $data);
 	}
-
-	public function validar(){
-		if($this->session->userdata('Rol')!=null)
-			return true;
-		else
-			return false;
-	}
-
+	
 
 }

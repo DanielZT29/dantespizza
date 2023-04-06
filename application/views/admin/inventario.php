@@ -42,9 +42,7 @@
               </li>
             </ul>
             <form class="d-flex" >
-                <a  class="btn btn-success" >
-                <?php echo $this->session->userdata("usuario") != null ? $this->session->userdata("usuario"):'';?>
-                </a>
+                <a  class="btn btn-success" >Admin</a>
                 <a href="<?php echo site_url("Loguear/salir"); ?>">   
                 <span class="btn btn-success">
                      Salir
@@ -67,7 +65,7 @@
                 <!-- Button trigger modal -->
 
                 <button  type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    +Agregar
+                    + Agregar
                 </button>
 
                 <!-- Modal agregar -->
@@ -76,17 +74,23 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Agregar Producto</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                                 <form method="post" action="<?php echo site_url().'/admin/C_inventario/guardarProducto/';?>">
                             </div>
                             <div class="modal-body">
-                                <label for="exampleDataList" class="form-label">Nombre:</label>
+
+                                <label for="exampleDataList" class="form-label">Nombre del provedor:</label>
+                                <input name="provedores" class="form-control" list="datalistOptions" id="exampleDataList"
+                                    placeholder="Provedor">
+                                <br>
+
+                                <label for="exampleDataList" class="form-label">Nombre del producto:</label>
                                 <input name="Nombre" class="form-control" list="datalistOptions" id="exampleDataList"
                                     placeholder="Nombre">
                                 <br>
-                                <label for="exampleDataList" class="form-label">Cantidad:</label>
+                                <label for="exampleDataList" class="form-label">Cantidad del producto:</label>
                                 <input name="cantidadProducto" class="form-control" list="datalistOptions" id="exampleDataList"
                                     placeholder="Cantidad">
                                 <br>
@@ -109,35 +113,34 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Actualizar Producto</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
-                                    <?php foreach($Inventario as $inventario){?>
-                                <form action="<?php echo base_url(); ?>index.php/admin/C_inventario/updateProducto/<?php echo $inventario->id_inventario;?>"class="" method="POST">
                             </div>
+                            <form method="post" action="<?php echo site_url().'/admin/C_inventario/updateInventario/';?>">
                             <div class="modal-body">
-                                <div class="input-group input-group-outline <?php echo isset($inventario) ? 'is-filled':'' ?>"></div>  
-                                <label for="exampleDataList" class="form-label">Nombre:</label>
-                                <input name="Nombre" class="form-control" list="datalistOptions" id="exampleDataList"placeholder="Nombre" value="<?php echo isset($inventario) ? $inventario->Nombre:''; ?>">
+
+                                <input type="hidden" name="id_inventario" id="id_inventario">
+                                <br> 
+    
+                                <label for="exampleDataList" class="form-label">Nombre del Provedor:</label>
+                                <input name="provedores" class="form-control" list="datalistOptions"  placeholder="Provedor"  id="provedor">
+                                <br> 
+                                <label for="exampleDataList" class="form-label">Nombre del producto:</label>
+                                <input name="Nombre" class="form-control" list="datalistOptions" " placeholder="Nombre"  id="nombre">
                                 <br>
                                 <label for="exampleDataList" class="form-label">Cantidad:</label>
-                                <input name="cantidadProducto" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Cantidad" value="<?php echo isset($inventario) ? $inventario->cantidadProducto:''; ?>">
+                                <input name="cantidadProducto" class="form-control" list="datalistOptions"  placeholder="Cantidad"  id="cantidad">
                                 <br>
                                 <label for="exampleDataList" class="form-label">Precio Unitario:</label>
-                                <input name="PrecioUnitario" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Precio Unitario" value="<?php echo isset($inventario) ? $inventario->PrecioUnitario:''; ?>">
+                                <input name="PrecioUnitario" class="form-control" list="datalistOptions"  placeholder="Precio Unitario" id="precioU">
                             </div>
                              
-                            <?php
-                            echo isset($inventario) ?
-                            '<input type="hidden" name="id_inventario" class="form-control" value="'.$inventario->id_inventario.'">'
-                            :'';
-                          ?>
                          
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                 <button type="submit" class="btn btn-primary">Guardar</button>
                                 </form>
-                                <?php } ?>
                             </div>
                            
                         </div>
@@ -151,6 +154,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Provedores</th>
                                     <th>Nombre</th>
                                     <th>Cantidad</th>
                                     <th>Precio Unitario</th>
@@ -162,23 +166,40 @@
                                 <tr>
 
                                     <td> <?php echo $inventario->id_inventario; ?> </td>
+                                    <td> <?php echo $inventario->provedores; ?> </td>
                                     <td> <?php echo $inventario->Nombre; ?> </td>
                                     <td> <?php echo $inventario->cantidadProducto; ?> </td>
                                     <td> <label>$</label> <?php echo $inventario->PrecioUnitario; ?> </td>
                                     <td>
+                                        
                                     <!-- Botones de editar y eliminar productos -->
-                                        <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2" href="">Editar</a>
+                                        <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal2" href="" <?php echo 'onclick="llenar_datos('.$inventario->id_inventario.', `'.$inventario->provedores.'`, `'.$inventario->Nombre.'`,'.$inventario->cantidadProducto.', '.$inventario->PrecioUnitario.')"'?>>Editar</a>
                                         <a href=" <?php echo base_url(); ?>index.php/admin/C_inventario/borrarProducto/<?php echo $inventario->id_inventario;?>"class="btn btn-danger">Borrar</ion-icon></a>
+                                        
                                     </td>
+                                    <?php } ?>
                                 </tr>
-                                <?php } ?>
+                               
                         </table>
+                        
                     </div>
                 </div>
-
+               
                 </tbody>
+                
+<script>
 
+    const llenar_datos = (id_inventario, provedores, Nombre, cantidadProducto, PrecioUnitario) => {
+            document.getElementById('id_inventario').value = id_inventario;
+            document.getElementById('provedor').value = provedores;
+            document.getElementById('nombre').value = Nombre;
+            document.getElementById('cantidad').value = cantidadProducto;
+            document.getElementById('precioU').value = PrecioUnitario;
+    };
 
+    
+
+</script>
 </body>
 
 </html>

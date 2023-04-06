@@ -12,7 +12,7 @@ class Sincronizadas extends CI_Controller {
 
 	public function index()
 	{
-		$data = array("data"=>$this->Productmodel->getProduct(4));
+		$data = array("data"=>$this->Productmodel->getProduct4());
 		
 		$this->load->view('sincronizadas', $data);
 	}

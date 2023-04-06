@@ -6,14 +6,12 @@ class Loguear extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('M_login');
-		$this->load->model("Productmodel");
-		$this->load->library("session");
 		
 
 	}
 
-	public function index($u=false){
-		$datos['error'] = $u?  "Usuario o contraseña Incorrecto": '';
+	public function index(){	
+		$datos['error'] = "Usuario Incorrecto";
 		$this->load->view('login',$datos);
 	}
 
@@ -21,30 +19,34 @@ class Loguear extends CI_Controller {
 		//Validar usuario y contraseña
 		if($this->input->post()){
 			$usuario = $this->M_login->usuario($this->input->post('Usuario'),$this->input->post('Password'));
+
 			if(is_object ($usuario)){
 				$this->session->set_userdata('Rol', $usuario->fk_tipo_usuario);
-				$this->session->set_userdata('usuario', $usuario->nombre_usuario);
-				if($usuario->fk_tipo_usuario == 1 ){
-					$data = array("data"=>$this->Productmodel->getProduct(1));
-					$this->load->view('admin/menu', $data);
-				}
-				else if($usuario->fk_tipo_usuario == 2){
-					$this->load->view('indexpizza');
+				$Rol = $this->session->userdata('Rol');  if($this->session->userdata('Rol') == 1 ) { 
+					redirect(base_url()."index.php/amenu");
+					
+				}  
+			}
+			if(is_object ($usuario)){
+				$this->session->set_userdata('Rol', $usuario->fk_tipo_usuario);
+				$Rol = $this->session->userdata('Rol');  if($this->session->userdata('Rol') == 2) { 
+					redirect(base_url()."index.php/pizzeria");
+					
+				}  
+			}
+				
+				else{
+					redirect(base_url()."404_override");
 				}
 			}
-			else{
-				$this->index(true);
-			}
-		}
-		else{
-			$this->index(true);
-		}
+			
 	}
+
 
 	public function salir()
 	{
-		
-		$this->session->sess_destroy();
+		session_start();
+		session_destroy();
 		header('Location:'.base_url()."index.php/iniciosesion");
 	}
 	

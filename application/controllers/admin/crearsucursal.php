@@ -11,25 +11,10 @@ class crearsucursal extends CI_Controller {
 
 	public function index()
 	{
-		if($this->validar()){
-			if($this->session->userdata('Rol')== 1){
-				$this->load->view('admin/crearsucursal');	
-			}
-			else{
-				$this->load->view('login');	
-			}
-		}
-		else{
-			$this->load->view("login");
-		}
+		
+		
+		$this->load->view('admin/crearsucursal');
 	}
-
-	public function validar(){
-		if($this->session->userdata('Rol')!=null)
-			return true;
-		else
-			return false;
-		}
     public function save()
 
 	{
