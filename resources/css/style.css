@@ -1,0 +1,276 @@
+/* Login and register */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url('../img/background.png')no-repeat;  
+    background-position: center;
+    background-size: cover;
+}
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: #fff;
+    border: 2px solid black;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.form-boxx{
+    position: relative;
+    width: 400px;
+    height: 550px;
+    background: #fff;
+    border: 2px solid black;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+h2{
+    font-size: 2em;
+    color: black;
+    text-align: center;
+}
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid black;
+}
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label{
+top: -5px;
+}
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+    color: black;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: black;
+    font-size: 1.2em;
+    top: 20px;
+}
+.forget{
+    margin: -15px 0 15px ;
+    font-size: .9em;
+    color: black;
+    display: flex;
+    justify-content: space-between;  
+}
+
+.forget label input{
+    margin-right: 3px;
+    
+}
+.forget label a{
+    color: black;
+    text-decoration: none;
+}
+.forget label a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #c9031a;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+.register{
+    font-size: .9em;
+    color: black;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register p a{
+    text-decoration: none;
+    color: #4180ab;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+}
+.logo{
+    width: 150px; 
+    height: 151.187px; 
+    margin-bottom: -100px; 
+    margin-left: 10%;
+}
+
+#navtext{
+    position: relative;
+    top: .8em;
+    left: 1%;
+}
+
+#navtext a:hover{
+    color: #EC100F;
+}
+
+#user{
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+#user i{
+    font-size: 28px;
+    margin-right: 7px;
+}
+
+#iconos a:hover{
+    color: #EC100F;
+}
+
+#iconos{
+    position: relative;
+    top: .7em;
+}
+
+#centrado{
+    position: relative;
+    top: 5em;
+}
+
+#centrado2{
+    position: relative;
+    top: 5em;
+}
+
+#animacion:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 15px rgba(0,0,0,0.2);
+   }
+
+#animacion{
+    height: 420px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin:0px;
+    transition: all 0.25s;
+}
+
+#sucuiconos{
+    display: flex;
+    align-items: center;
+}
+
+#sucuiconos i{
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+#ticket{
+    height: 850px;
+}
+
+#producto{
+    height: 150px;
+}
+
+#tarjeta{
+    width: 250px;
+    height: 50px;
+}
+
+.container-fluid{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    
+}
+
+#contactanos {
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+#contactanos i{
+    font-size: 40px;
+    margin-right: 7px;
+    margin-bottom: 2%;
+}
+
+#wasa{
+    color: #25D366;
+}
+
+#gma{
+    color: #FD0A37;
+}
+
+#feis{
+    color: #3b5998;
+}
+.container h1{
+    color: black;
+    font-family: Impact, 'Arial Narrow Bold';
+    
+    
+}
+.menu {
+    background: rgb(124, 131, 88);
+  width: 100%;
+  position: relative;
+  
+    text-decoration: none;
+}
+.menu a{
+    color: black;
+  padding-right: 1%;
+  padding-left: 1%;
+    text-decoration: none;
+    
+    
+    
+}
+.menu a:hover{
+    color: rgb(255, 255, 255);
+ 
+    
+    
+    
+}
+
