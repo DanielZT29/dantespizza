@@ -83,6 +83,9 @@
                 </div>
 
                 </tbody>
+
+                <a href="<?php echo base_url(); ?>index.php/orden" class="btn btn-success" style="margin-left: 93%">Pagar</a>
+
                 </div>
     </body>
     <!-- Js link -->

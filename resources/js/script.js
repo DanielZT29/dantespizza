@@ -8,6 +8,7 @@ function ocultar(){
 
 
 
+
 var sumar = document.getElementById("mas");
 var restar = document.getElementById("menos");
 var contador = document.getElementById("contador");

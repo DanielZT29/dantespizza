@@ -8,8 +8,8 @@
    <!-- Bootstrap 5.0 -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>DantesPizzas</title>
 
@@ -19,7 +19,7 @@
        
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-dark bg-success fs-5">
-	<a href="<?php echo base_url(); ?>index.php/Pizzeria"><img src="<?php echo base_url();?>resources/img/logo.png" class="logo"></a>
+	  <a href="<?php echo base_url(); ?>index.php/Pizzeria"><img src="<?php echo base_url();?>resources/img/logo.png" class="logo"></a>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navtext">
               <li class="nav-item">
@@ -44,192 +44,135 @@
             </form>
           </div>
       </nav> 
-    
+    </div>
     </header>
 <body>
 
-  <div class="container-fluid">
-    
+<div class="card border-dark mb-3 text-dark bg-light mb-3" style="max-width: 30rem; margin-left: 37%; margin-top: 3%;">
+  <div class="card-body">
+    <h5 class="card-title fs-2 fw-bold">Tu Pedido</h5>
+    <p class="fw-bold fs-6">Daniel Zamora Tapia</p>
+    <p class="fw-light fs-6">Mon, Jul 6,2023 10:57 PM</p>
+    <p class="card-text fs-6">Num de orden:117</p>
+  </div>
+  <div class="card-body">
+  <h5 class="card-title fs-3 fw-bold">Articulos</h5>
+    <p class="card-text">
+    1 X
+    Pizza Hawaiana 
+    <button type="button" class="btn btn-light" style="width: 9%;"><i class="fa-solid fa-plus"></i></button> 
+    <button type="button" class="btn btn-light" style="width: 9%;"><i class="fa-solid fa-minus"></i></button>
+    <button type="button" class="btn btn-light" style="width: 9%;"><i class="fa-solid fa-trash"></i></button>
+    $220.00
+    </p>
+    <p class="card-text">
+    3 X	
+    Pizza Mixta
+    <button type="button" class="btn btn-light" style="width: 9%;"><i class="fa-solid fa-plus"></i></button> 
+    <button type="button" class="btn btn-light" style="width: 9%;"><i class="fa-solid fa-minus"></i></button>
+    <button type="button" class="btn btn-light" style="width: 9%;"><i class="fa-solid fa-trash"></i></button>
+    $660.00
+    </p>
+    <p class="card-text">	
+    2 X
+    Pizza Dante
+    <button type="button" class="btn btn-light" style="width: 9%;"><i class="fa-solid fa-plus"></i></button> 
+    <button type="button" class="btn btn-light" style="width: 9%;"><i class="fa-solid fa-minus"></i></button>
+    <button type="button" class="btn btn-light" style="width: 9%;"><i class="fa-solid fa-trash"></i></button>
+    $440.00
+    </p>
+  </div>
+  <div class="card-body">
+  <h5 class="card-title fs-3 fw-bold">Metodo de Pago</h5>
+  <button type="button" class="btn btn-light" style="width: 40%; margin-left: 2%;"  onclick="ocultar();"><i class="fa-solid fa-money-bill"></i></i>Efectivo</button> 
+  <button type="button" class="btn btn-light" style="width: 50%;" onclick="mostrar();"><i class="fa-solid fa-credit-card"></i>Tarjeta de credito</button> 
+  </div>
 
-      <div class="row justify-content-center" id="centrado" style="margin-right: 0px;">
-        <div class="card mb-3 border border-dark" style="max-width: 1200px;" id="ticket">
-          <div class="row g-0 ">
-            <div class="col-md-6">
-              <div class="card-body ">
-                <div>
-                  <h5 class="card-title text-center fs-2">Tu pedido</h5>
-                  <p class="card-title fs-4 fw-bold">Dirección  de entrega</p>
-                  <p class="card-text">Av.De los Pelicanos Atras de Soriana Casa #2</p>
-                </div>
-
-                <h3 class="card-title fs-5 fw-bold">Metodo de pago</h3>
-                <div class="card p-3 border-0 bg-transparent" style="max-width: 540px;">
-                  <div class="row g-0">
-                      <div class="row align-items-start p-2" style="margin-left: 25%; margin-top: -4%;"> 
-                        <div class="col-3">
-                          <button type="button" class="btn btn-outline-dark" onclick="ocultar();">Efectivo</button>
-                        </div>
-                        <div class="col-3">
-                          <button type="button" class="btn btn-outline-dark" onclick="mostrar();">Tarjeta</button>
-                        </div> 
-                      </div>
-                  </div>
-                </div>
-
-                <h3 class="card-title fs-5 fw-bold">Producto</h3>
-
-                <div class="card border-0 bg-transparent" style="max-width: 540px;" id="producto">
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                    <img src="<?php echo site_url("$ImagenProducto"); ?>" class="card-img-top imgCard" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <p class="card-text fw-bold"><?php echo $nombre_productos?></p>
-                        <input type="number"  id="importe" class="form-control  bg-transparent border-0" style="width: 30%;" disabled>
-                        
-                          <div class="row g-0">
-                            <div class="row align-items-start p-2" style="margin-left: 20%;"> 
-                              <div class="col-2">
-                                <button type="button" class="btn btn-outline-dark" style="margin-right: 7px; margin-left: 7px;"><i class="fa-solid fa-trash"></i></button>
-                              </div>
-                              <div class="col-2">
-                                <button type="button" class="btn btn-outline-dark" id="menos"><i class="fa-solid fa-minus"></i></button>
-                              </div>
-                              <div class="col-2">
-                                
-                              </div>
-                              <div class="col-2">
-                                <button type="button" class="btn btn-outline-dark" id="mas"><i class="fa-solid fa-plus"></i></button>
-                              </div>
-                            </div>
-                        </div>
-                        
-                        <input type="text" id="contador" class="form-control bg-transparent border-0" value="1" min="1" style="width: 20%; margin-left: 58%; margin-top: -13.5%;" disabled/>
-                        <p style="margin-top: -23.3%;">$</p>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div> 
- 
-                <h3 class="card-title fs-5 fw-bold">Propina</h3>
-              
-                <div class="card p-3 border-0 bg-transparent" style="max-width: 540px;">
-                  <div class="row g-0">
-                      <div class="row align-items-start p-2" style="margin-left: 15%;"> 
-                        <div class="col-2">
-                          <button type="button" class="btn btn-outline-dark">$4.00</button>
-                        </div>
-                        <div class="col-2">
-                          <button type="button" class="btn btn-outline-dark">$15.00</button>
-                        </div>
-                        <div class="col-2">
-                          <button type="button" class="btn btn-outline-dark">$50.00</button>
-                        </div>
-                        <div class="col-2">
-                          <button type="button" class="btn btn-outline-dark">$100.00</button>
-                        </div>
-                      </div>
-                      <div class="row align-items-start p-2" style="margin-left: 35%;">
-                        <div class="col-5">
-                          <button type="button" class="btn btn-outline-dark">Sin propina</button>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-              
-                <h3 class="card-title fs-5 fw-bold">Resumen</h3>
-
-                <div class="card mb-3 border-0 bg-transparent" style="max-width: 540px;">
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <p class="card-text">Costo del producto</p>
-                      <p class="card-text">Tarifa de servicio</p>
-                      <p class="card-text">Costo de envio</p>
-                      <p class="card-text">Propina</p>
-                    </div>
-                    <div class="col-md-6">         
-                        <p class="text-end">$110.00</p>
-                        <p class="text-end">10.00</p>                 
-                        <p class="text-end">$15.00</p>                  
-                        <p class="text-end">$0.00</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-4">
-                  <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Pagar y Finalizar</button>
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Compra</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          Se compra se ha realizado con exito
-                        </div>
-                        <div class="modal-footer">
-                          <a class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</a>
-                          <a href="../index.html" class="btn btn-outline-success">Aceptar y salir</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                
-            
-              </div>
-            </div>
-
-            <div class="col-md-6" id="data" style="margin-top: 15%;">
-              <div class="card-body">
-                <h5 class="card-title text-end fs-6">Pago seguro<i class="fa-solid fa-lock"></i></h5>
-                <img src="../img/tarjetas.png" id="tarjeta">
-                <p class="card-text fs-5">Titular de tarjeta</p>
-                <div class="col-8">
-                  <input class="form-control me-2">
-                </div>
-                <p class="card-text fs-5">Número de tarjeta</p>
-                <div class="col-8">
-                  <input class="form-control me-2">
-                </div>
-
-                <div class="row g-0" style="margin-left: -1.3%;">
-                  <div class="row align-items-start p-2"> 
-                    <div class="col-5">
-                      <div class="card-text fs-5">
-                        <p class="card-text">Fecha de vencimiento</p>
-                      </div>
-                    </div>
-                    <div class="col-5">
-                      <div class="card-text fs-5">
-                        <p class="card-text">Código de seguridad</p>
-                      </div>
-                    </div> 
-                  </div>
-                </div>
-
-                <div class="row g-0" style="margin-left: -1.3%;">
-                  <div class="row align-items-start p-2"> 
-                    <div class="col-5">
-                      <input class="form-control me-2">
-                    </div>
-                    <div class="col-5">
-                      <input class="form-control me-2">
-                    </div> 
-                  </div>
-                </div>
-                
-              </div>
-            </div>
+  <div class="col-4">
+    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 190%;">Pagar y Finalizar</button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Compra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Se compra se ha realizado con exito
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</a>
+            <a href="<?php echo base_url(); ?>index.php/Pizzeria" class="btn btn-outline-success">Aceptar y salir</a>
           </div>
         </div>
       </div>
+    </div>
   </div>
+</div>
+
+<div class="card border-dark mb-3 text-dark bg-light mb-3 border-top-0" style="max-width: 30rem; margin-left: 37%; margin-top: -1%; display: none;" id="data">
+  <div class="card-body">
+  <h5 class="card-title fs-2 fw-bold">Datos de tarjeta</h5>
+  <img src="<?php echo base_url();?>resources/img/tarjetas.png" id="tarjeta">
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">Nombre del títular</p>
+    <input type="text" class="form-control">
+    <p class="card-text">Apellídos del títular</p>
+    <input type="text" class="form-control">
+    <p class="card-text">Número de tarjeta</p>
+    <input type="text" class="form-control">
+  </div>
+
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          Expiración
+          <input type="text" class="form-control">
+        </div>
+        <div class="col">
+          C.de seguridad
+          <input type="text" class="form-control">
+        </div>
+        <div class="col">
+          C.Postal
+          <input type="text" class="form-control">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">Email</p>
+    <input type="text" class="form-control">
+    <p class="card-text">Telefóno</p>
+    <input type="text" class="form-control">
+  </div>
+  <div class="col-4">
+    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 190%;">Pagar y Finalizar</button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Compra</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Se compra se ha realizado con exito
+          </div>
+          <div class="modal-footer">
+            <a class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</a>
+            <a href="<?php echo base_url(); ?>index.php/Pizzeria" class="btn btn-outline-success">Aceptar y salir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 
